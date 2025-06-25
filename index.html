@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Student Cybersecurity Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons (Skills, Social Media) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom CSS for Inter font and general body styles */
+        body {
+            font-family: 'Inter', sans-serif;
+            @apply bg-gray-50 text-gray-800;
+        }
+        /* Smooth scroll for anchor links */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom scrollbar for a cleaner look (optional) */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+
+        /* Keyframe animations for Hero Section elements */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+
+        .animate-delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .animate-delay-400 {
+            animation-delay: 0.4s;
+        }
+
+        /* Custom Modal Styles (for form submission message) */
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1000; /* Sit on top */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+        }
+
+        .close-button:hover,
+        .close-button:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="leading-relaxed">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-sm py-4 fixed top-0 left-0 right-0 z-50 rounded-b-lg">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="#home" class="text-2xl font-bold text-indigo-700 rounded-lg p-2 hover:bg-indigo-50 transition-all duration-300">
+                NIVEDITA NEELANNAVAR
+            </a>
+
+            <!-- Navigation Links -->
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#about" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-300 rounded-md p-2 hover:bg-gray-100">About</a></li>
+                    <li><a href="#skills" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-300 rounded-md p-2 hover:bg-gray-100">Skills</a></li>
+                    <li><a href="#certificates" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-300 rounded-md p-2 hover:bg-gray-100">Certificates</a></li>
+                    <li><a href="#projects" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-300 rounded-md p-2 hover:bg-gray-100">Projects</a></li>
+                    <li><a href="#contact" class="text-gray-600 hover:text-indigo-700 font-medium transition-colors duration-300 rounded-md p-2 hover:bg-gray-100">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section (Home) -->
+    <section id="home" class="relative bg-gradient-to-r from-gray-900 via-gray-800 to-blue-900 text-white min-h-screen flex items-center justify-center pt-20">
+        <div class="container mx-auto px-4 text-center">
+            <img src="images/PP.jpg" alt="Cybersecurity Profile Icon" class="w-36 h-36 rounded-full mx-auto mb-6 border-4 border-emerald-400 shadow-lg object-cover">
+            <h1 class="text-5xl font-extrabold mb-4 animate-fadeInUp">
+                Hi, I'm <span class="text-emerald-300">Nivedita Neelannavar</span>
+            </h1>
+            <p class="text-xl mb-8 opacity-90 animate-fadeInUp animate-delay-200">
+                An aspiring <span class="font-semibold text-emerald-200">Cybersecurity Analyst | Security Engineer | Ethical Hacker</span>, passionate about digital defense.
+            </p>
+            <a href="#about" class="inline-block bg-emerald-500 text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emerald-600 transition-all duration-300 transform hover:scale-105 animate-fadeInUp animate-delay-400">
+                Explore My Cybersecurity Journey
+            </a>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">About Me</h2>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6 text-lg text-gray-700">
+                    <p>
+                        Hello! I'm <span class="font-semibold">Nivedita Neelannavar</span>, I am an engineering student currently pursuing my degree at Srinivas University. With a  foundation in  Computer Science. I have developed a keen interest in applying my academic knowledge to real-world challenges. I am eager to gain hands-on experience through an internship, where I can contribute my skills and enthusiasm while learning from industry professionals. I am passionate about software development, Cyber Security  and I look forward to the opportunity to grow and make a meaningful impact as part of your team.
+                    </p>
+                    <p>
+                        I am particularly passionate about <span class="font-semibold">safeguarding digital infrastructures, identifying vulnerabilities, and developing robust security solutions.</span>
+                        I am constantly exploring new threat landscapes and staying updated with the latest cybersecurity trends and defense mechanisms.
+                    </p>
+                    <p>
+                        Beyond my studies, I actively engage in  security research, contributing to cybersecurity forums, ethical hacking challenges.
+                        I am committed to contributing to a more secure digital world and eager to apply my skills in an intern role.
+                    </p>
+                </div>
+                <div class="flex justify-center">
+                    <!-- You can replace this with a more personal photo or a cybersecurity-themed graphic -->
+                    <img src="images/PP.jpg" alt="Another Profile Image" class="w-80 h-80 rounded-lg shadow-xl object-cover transform rotate-3 hover:rotate-0 transition-transform duration-500">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">My Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- Cybersecurity Core Concepts -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-4 text-purple-700 flex items-center">
+                        <i class="fas fa-shield-alt mr-3 text-purple-500"></i>Cybersecurity Concepts
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Information Security Awareness and Cybersecurity Awareness: Cybersecurity Terminology</li>
+                        <li>Threat & Vulnerability Management</li>
+                        <li>The Cybersecurity Threat Landscape</li>
+                        <li>Cyber Defense and Generative AI Tools </li>
+                        <li>Microsoft Copilot </li>
+                    </ul>
+                </div>
+
+                <!-- Programming Languages for Security -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-4 text-green-700 flex items-center">
+                        <i class="fas fa-terminal mr-3 text-green-500"></i>Programming & Scripting
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Python (Scripting, Automation)</li>
+                        <li>OOP using Paython and also Java</li>
+                        <li>DBMS and RDBMS</li>
+                        <li>HTML,CSS,JAVA(Basics)</li>
+                        <li>SQL</li>
+                    </ul>
+                </div>
+
+                <!-- Security Tools -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-4 text-red-700 flex items-center">
+                        <i class="fas fa-tools mr-3 text-red-500"></i>Security Tools & Platforms
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Network Scanners (Nmap)</li>
+                        <li>Packet Analyzers (Wireshark)</li>
+                        <li>Vulnerability Exploitation (Metasploit)</li>
+                        <li>Virtualization (VMware, VirtualBox)</li>
+                        <li>Linux OS (Kali Linux, Ubuntu)</li>
+                    </ul>
+                </div>
+
+                
+                <!-- Soft Skills -->
+                <div class="bg-gray-100 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:-translate-y-1">
+                    <h3 class="text-2xl font-semibold mb-4 text-gray-700 flex items-center">
+                        <i class="fas fa-users mr-3 text-gray-500"></i>Soft Skills
+                    </h3>
+                    <ul class="list-disc list-inside text-gray-700 space-y-2">
+                        <li>Problem Solving & Analytical Thinking</li>
+                        <li>Attention to Detail</li>
+                        <li>Communication & Collaboration</li>
+                        <li>Continuous Learning</li>
+                        <li>Ethical Hacking Mindset</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+   
+
+<section id="certificates" class="py-16 sm:py-20 bg-gray-50">
+<div class="container mx-auto px-2sm:px-4lg:px-8">
+<h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10 text-gray-900"\>My Certificates </h2\>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"\>
+
+
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-23 121511.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Ethical Hacker</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Networking Academy through the Cisco Networking Academy program</p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-03-26 222608.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Cybersecurity Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Tech Mahindra Foundation through Skill India Digital Hub </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="\images\Screenshot 2025-05-12 213840.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Security Analyst Certificate Programme</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Reliance Foundation Skilling Academy </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-03-27 204801.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Forensic Accounting and Fraud Examination Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by West Virginia University and offered through Coursera </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-14 164416.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Cybersecurity Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by AIG New York Jobs CEO Council </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 181657.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Cybersecurity Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by DATACOM </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 192322.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Cybersecurity Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by mastercard New York Jobs CEO Council </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-01-06 202327.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">TCS ION Career Edge - Young Professional Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by TCS  </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2024-12-20 184823.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Network Mastery for Ethical Hackers</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Uedmy </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-03-24 225616.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">NXT WAVE  Certificate of Appreciation</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by NXT WAVE  </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-03-28 143609.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Career Essential in Generative AI </h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by  Microsoft and LinkedIn </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-03 140748.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Carrer essential in Cybersecurity</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Microsoft and LinkedIn  </p>
+      </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-03 142903.png" alt="Security Analyst Certificate  " class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Cybersecurity</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by TATA </p>
+      </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-03 160209.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Networking and Web Technology</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Infosys </p>
+      
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-04 193541.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Python Essentials 1</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Networking Academy through the Cisco Networking Academy program </p>
+      
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-06 154646.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Introduction to Cybersecurity</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Networking Academy through the Cisco Networking Academy program </p>
+      
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-13 215642.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Accenture</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Data Analytics and Visualization</p>
+      
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-03 165818.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Software Engineer</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Forage </p>
+      
+    </div>
+  </div>
+   <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-05 165325.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Python Essentials 2</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Networking Academy through the Cisco Networking Academy program</p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-06 154247.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Cybersecurity</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Networking Academy through the Cisco Networking Academy program</p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-04-14 134738.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Developer and Technology Job Simulation Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Accenture </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-05-10 165709.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">IOT-Network Specialist Certificate </h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Reliance </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-12 211852.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Internship complition certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Micro IT </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-17 125855.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Pogramming Fundamentals using Python-part1 Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Infosys </p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-23 121441.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">CyberSecurity</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Deloitte</p>
+      
+    </div>
+  </div>
+  <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 181549.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Solution Architecture </h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by AWS</p>
+      
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 181919.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900"> Email Writing Skills Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Infosys </p>
+       </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 182008.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">High Impact Presentations Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Infosys </p>
+       </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 182122.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Introduction to NoSQL Database Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Infosys </p>
+       </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 182147.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">OOP using Python Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Infosys</p>
+       </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 182308.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Software Engineering and Agile Software Development Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Infosys</p>
+       </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 182751.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Cybersecurity Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Telstra</p>
+       </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2025-06-24 191953.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Cybersecurity Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by ANZ  </p>
+       </div>
+    </div>
+    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+    <img src="images\Screenshot 2024-10-20 201200.png" alt="Ethical Hacker Certificate" class="w-96 h-64 object-cover">
+    <div class="p-6">
+      <h3 class="text-xl font-semibold mb-2 text-gray-900">Internship complition Certificate</h3>
+      <p class="text-gray-600 text-sm mb-4">Issued by Codsoft </p>
+       </div>
+    </div>
+    
+</section\>
+<section id="projects" class="py-16 sm:py-20 bg-gray-100">
+        <div class="container mx-auto px-2 sm:px-4 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-bold text-center mb-8 sm:mb-10 text-gray-900">My Projects</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300">
+                    <img src="https://via.placeholder.com/600x400/8B0000/FFFFFF?text=Project+1+Image" alt="Project 1 Image" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2 text-gray-900">Automated Network Scanner</h3>
+                        <p class="text-gray-600 text-sm mb-4">Developed a Python script using Scapy to perform network reconnaissance, including host discovery and port scanning. Automated vulnerability checks against common services.</p>
+                        <a href="https://github.com/yourusername/network-scanner-project" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-blue-600 text-white text-sm font-medium py-2 px-4 rounded-md hover:bg-blue-700 transition-colors duration-300">
+                            View Project
+                            <i class="fas fa-external-link-alt ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+
+                </div>
+
+            <div class="text-center mt-12">
+                <a href="add_project.html" class="inline-block bg-emerald-500 text-gray-900 font-bold py-3 px-8 rounded-full shadow-lg hover:bg-emerald-600 transition-all duration-300 transform hover:scale-105">
+                    Add a New Project
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-4xl font-bold text-center mb-12 text-gray-900">Get In Touch</h2>
+            <div class="max-w-xl mx-auto bg-gray-100 p-8 rounded-lg shadow-md">
+                <p class="text-center text-lg text-gray-700 mb-6">
+                    Connect with me to discuss cybersecurity, internships, or anything tech-related!
+                </p>
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 text-sm font-bold mb-2">Name:</label>
+                        <input type="text" id="name" name="name" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-700 text-sm font-bold mb-2">Email:</label>
+                        <input type="email" id="email" name="email" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="your.email@example.com">
+                    </div>
+                    <div>
+                        <label for="message" class="block text-gray-700 text-sm font-bold mb-2">Message:</label>
+                        <textarea id="message" name="message" rows="6" class="shadow appearance-none border rounded-md w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="Your message..."></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="bg-indigo-600 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-indigo-700 transition-colors duration-300 transform hover:scale-105">
+                            Send Message
+                        </button>
+                    </div>
+                </form>
+                <div class="mt-8 text-center text-gray-700">
+                    <p class="mb-4">Or find me on social media:</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="www.linkedin.com/in/nivedita-neelannavar" target="_blank" class="text-gray-600 hover:text-blue-700 text-3xl transition-colors duration-300">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/NiveditaNeelannavar" target="_blank" class="text-gray-600 hover:text-gray-900 text-3xl transition-colors duration-300">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 text-center rounded-t-lg">
+        <div class="container mx-auto px-4">
+            <p>&copy; <span id="current-year"></span> Nivedita Neelannavar. All rights reserved.</p>
+           
+        </div>
+    </footer>
+
+    <!-- Custom Modal Structure -->
+    <div id="messageModal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <p id="modal-message" class="text-lg text-gray-800"></p>
+            <button class="mt-6 bg-indigo-600 text-white font-bold py-2 px-6 rounded-full hover:bg-indigo-700 transition-colors duration-300" onclick="document.getElementById('messageModal').style.display = 'none';">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for dynamic current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // JavaScript for smooth scrolling (if browser doesn't support scroll-behavior: smooth)
+        // This is a fallback and can be omitted if you only target modern browsers.
+        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Get the modal elements
+        const messageModal = document.getElementById('messageModal');
+        const modalMessage = document.getElementById('modal-message');
+        const closeButton = document.querySelector('.close-button');
+
+        // Function to show the modal
+        function showModal(message) {
+            modalMessage.textContent = message;
+            messageModal.style.display = 'flex'; // Use flex to center
+        }
+
+        // Close the modal when the close button is clicked
+        closeButton.addEventListener('click', () => {
+            messageModal.style.display = 'none';
+        });
+
+        // Close the modal when clicking outside of it
+        window.addEventListener('click', (event) => {
+            if (event.target == messageModal) {
+                messageModal.style.display = 'none';
+            }
+        });
+
+        // Simple form submission handler (logs to console and shows modal)
+        document.querySelector('#contact form').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent default form submission
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            console.log('Form Submitted!');
+            console.log('Name:', name);
+            console.log('Email:', email);
+            console.log('Message:', message);
+
+            // In a real application, you would send this data to a server (e.g., using fetch API)
+            // Example:
+            /*
+            fetch('/submit-form', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, email, message })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                showModal('Message sent successfully!');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                showModal('Failed to send message. Please try again later.');
+            });
+            */
+
+            // You can also clear the form fields after submission
+            document.getElementById('name').value = '';
+            document.getElementById('email').value = '';
+            document.getElementById('message').value = '';
+
+            // Provide a user-friendly message via the modal
+            showModal('Thank you for your message! I will get back to you soon.');
+        });
+    </script>
+</body>
+</html>
